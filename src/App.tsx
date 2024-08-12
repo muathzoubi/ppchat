@@ -19,7 +19,6 @@ function App() {
     });
   }, []);
   const handleSubmit = (e: any) => {
-    setUser('Muath');
     e.preventDefault();
     if (message.trim()) {
       const messagesRef = ref(db, 'messages');
