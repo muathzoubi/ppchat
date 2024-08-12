@@ -5,6 +5,7 @@ import './App.css';
 function App() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const [count, setCount] = useState(0);
   const [user, setUser] = useState('');
   const [ready, setReady] = useState(false);
 
@@ -14,6 +15,8 @@ function App() {
       const data = snapshot.val();
       if (data) {
         const messagesList = Object.values(data) as any;
+        setCount(messagesList.length)
+
         setMessages(messagesList);
       }
     });
@@ -38,6 +41,7 @@ function App() {
       {ready && user !=='' ?
     <div className="App">
       <div className="card">
+      Total Messages: {count}
             <ul>
           {messages.map((msg: any, index) => (
             <div className="chat-box">
