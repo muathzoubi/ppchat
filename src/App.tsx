@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-  { !ready && user ===''?  
+  { !ready || user ===''?  
     <>
       <input type='text' onChange={(e)=>{setUser(e.target.value)}} placeholder='User Name'/>
       <button onClick={()=>setReady(true)}>Submit</button>
