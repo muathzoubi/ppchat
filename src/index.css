@@ -116,7 +116,7 @@ li {
 
 .chat-box {
   display: grid;
-  grid-template-columns: 2fr 0.1fr;
+  grid-template-columns: 2fr ;
 }
 .notibody {
   display: flex;

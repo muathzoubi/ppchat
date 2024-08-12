@@ -50,16 +50,7 @@ function App() {
                 <strong>{msg.user}</strong>
                 <span>{msg.text}</span>
               </li>
-              <span
-                style={{
-                  border: '1px gray solid',
-                  borderRadius: '50%',
-                  height: 45,
-                  width: 45,
-                  display: 'flex',
-                  marginTop: 4,
-                }}
-              ></span>
+          
             </div>
           ))}
         </ul>
