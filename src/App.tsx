@@ -5,7 +5,8 @@ import './App.css';
 function App() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const [user, setUser] = useState('Muath');
+  const [user, setUser] = useState('');
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const messagesRef = ref(db, 'messages');
@@ -28,9 +29,17 @@ function App() {
   };
 
   return (
+    <>
+  { !ready && user ===''?  
+    <>
+      <input type='text' onChange={(e)=>{setUser(e.target.value)}} placeholder='User Name'/>
+      <button onClick={()=>setReady(true)}>Submit</button>
+      </>:
+  null}
+      {ready && user !=='' ?
     <div className="App">
       <div className="card">
-        <ul>
+            <ul>
           {messages.map((msg: any, index) => (
             <div className="chat-box">
               <li
@@ -65,7 +74,9 @@ function App() {
           <button type="submit">✈️</button>
         </form>
       </div>
-    </div>
+    </div>:null
+    }
+    </>
   );
 }
 
